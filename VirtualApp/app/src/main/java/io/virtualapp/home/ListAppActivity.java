@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import androidx.core.view.ViewPager;
-import androidx.recyclerview.widget.Toolbar;
+import com.google.android.material.tabs.TabLayout;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
 import android.view.MenuItem;
-import android.app.FragmentManager;
 
 import io.virtualapp.R;
 import io.virtualapp.VCommends;
@@ -36,7 +36,7 @@ public class ListAppActivity extends VActivity {
         mToolBar = findViewById(R.id.clone_app_tool_bar);
         mTabLayout = mToolBar.findViewById(R.id.clone_app_tab_layout);
         mViewPager = findViewById(R.id.clone_app_view_pager);
-        mViewPager.setAdapter(new AppPagerAdapter(getFragmentManager()));
+        mViewPager.setAdapter(new AppPagerAdapter(getSupportFragmentManager()));
         mTabLayout.setupWithViewPager(mViewPager);
 
     }

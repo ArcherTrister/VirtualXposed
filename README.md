@@ -91,3 +91,17 @@ Credits
 1. [VirtualApp](https://github.com/asLody/VirtualApp)
 2. [Xposed](https://github.com/rovo89/Xposed)
 3. [And64InlineHook](https://github.com/Rprop/And64InlineHook)
+
+
+# build
+
+下载代码时使用recursive
+git clone https://github.com/android-hacker/VirtualXposed.git --recursive
+
+先clone父项目，再初始化Submodule.
+git clone https://github.com/android-hacker/VirtualXposed.git
+cd VirtualXposed
+git submodule init
+git submodule update
+or
+git submodule update --init --recursive --progress

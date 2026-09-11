@@ -1,13 +1,16 @@
 package io.virtualapp.gms;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AlertDialog;
+//import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
+
+//import androidx.appcompat.app.AlertDialog;
 
 import com.lody.virtual.client.core.InstallStrategy;
 import com.lody.virtual.client.core.VirtualCore;
@@ -56,7 +59,8 @@ public class FakeGms {
             return;
         }
 
-        AlertDialog failDialog = new AlertDialog.Builder(activity, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+        //Theme_AppCompat_DayNight_Dialog_Alert => R.style.ThemeOverlay_AppCompat_Dark（或改用 Theme.MaterialComponents.Dialog.Alert）
+        AlertDialog failDialog = new AlertDialog.Builder(activity, R.style.VAAlertTheme)
                 .setTitle(R.string.uninstall_gms_title)
                 .setMessage(R.string.uninstall_gms_content)
                 .setPositiveButton(R.string.uninstall_gms_ok, ((dialog1, which1) -> {
@@ -69,7 +73,7 @@ public class FakeGms {
                         VirtualCore.get().uninstallPackage(FAKE_GAPPS_PKG);
                     }).then((v) -> {
                         dialog.dismiss();
-                        AlertDialog hits = new AlertDialog.Builder(activity, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                        AlertDialog hits = new AlertDialog.Builder(activity, R.style.VAAlertTheme)
                                 .setTitle(R.string.uninstall_gms_title)
                                 .setMessage(R.string.uninstall_gms_success)
                                 .setPositiveButton(android.R.string.ok, null)
@@ -113,7 +117,7 @@ public class FakeGms {
             return;
         }
 
-        AlertDialog alertDialog = new AlertDialog.Builder(activity, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+        AlertDialog alertDialog = new AlertDialog.Builder(activity, R.style.VAAlertTheme)
                 .setTitle(R.string.install_gms_title)
                 .setMessage(R.string.install_gms_content)
                 .setPositiveButton(android.R.string.ok, ((dialog, which) -> {
@@ -134,7 +138,7 @@ public class FakeGms {
 
                         if (failMsg == null) {
                             activity.runOnUiThread(() -> {
-                                AlertDialog failDialog = new AlertDialog.Builder(activity, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                                AlertDialog failDialog = new AlertDialog.Builder(activity, R.style.VAAlertTheme)
                                         .setTitle(R.string.install_gms_title)
                                         .setMessage(R.string.install_gms_success)
                                         .setPositiveButton(android.R.string.ok, null)
@@ -143,7 +147,7 @@ public class FakeGms {
                             });
                         } else {
                             activity.runOnUiThread(() -> {
-                                AlertDialog failDialog = new AlertDialog.Builder(activity, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                                AlertDialog failDialog = new AlertDialog.Builder(activity, R.style.VAAlertTheme)
                                         .setTitle(R.string.install_gms_fail_title)
                                         .setMessage(R.string.install_gms_fail_content)
                                         .setPositiveButton(R.string.install_gms_fail_ok, ((dialog1, which1) -> {

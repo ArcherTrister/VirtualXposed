@@ -185,4 +185,6 @@ Currently, EXposed has been put on the app store and renamed to Tai Chi. You can
     <string name="install_go_latest_exp">Install the latest TaiChi</string>
     <string name="install_complete_and_open">Open</string>
     <string name="unsupported_for_32bit_app">32bits App is not supported!</string>
+    <string name="package_state_unknown">Unknown</string>
+    <string name="about_donate">Donate me</string>
 </resources>

@@ -26,7 +26,8 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <style name="VAAlertTheme" parent="Theme.AppCompat.Light.Dialog.Alert" />
+     <style name="VAAlertTheme" parent="Theme.AppCompat.Light.Dialog.Alert" />
+<!--    <style name="VAAlertTheme" parent="Theme.MaterialComponents.DayNight" />-->
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 

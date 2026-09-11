@@ -7,7 +7,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -66,12 +67,18 @@ public class InstallerActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        // do nothing.
+//        if (mInstallCount > 0) {
+//
+//        }
+//    }
+
+
     @Override
     public void onBackPressed() {
-        // do nothing.
-        if (mInstallCount > 0) {
-
-        }
+        super.onBackPressed();
     }
 
     private void handleIntent(Intent intent) {

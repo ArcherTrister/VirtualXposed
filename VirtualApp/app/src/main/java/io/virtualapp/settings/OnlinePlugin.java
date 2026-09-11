@@ -1,9 +1,10 @@
 package io.virtualapp.settings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.SystemClock;
-import android.support.v7.app.AlertDialog;
+//import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -56,7 +57,7 @@ public class OnlinePlugin {
             return;
         }
 
-        AlertDialog failDialog = new AlertDialog.Builder(context, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+        AlertDialog failDialog = new AlertDialog.Builder(context, R.style.VAAlertTheme)
                 .setTitle(android.R.string.dialog_alert_title)
                 .setMessage(tips)
                 .setPositiveButton(android.R.string.ok, ((dialog1, which1) -> {

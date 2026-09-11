@@ -1,12 +1,12 @@
 package io.virtualapp.utils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
 import io.virtualapp.R;
@@ -21,7 +21,7 @@ public class Misc {
         final String alipay = context.getResources().getString(R.string.donate_alipay);
         final String[] items = {alipay, "PayPal", "Bitcoin"};
 
-        AlertDialog chooseDialog = new AlertDialog.Builder(context, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+        AlertDialog chooseDialog = new AlertDialog.Builder(context, R.style.VAAlertTheme)
                 .setTitle(R.string.donate_choose_title)
                 .setItems(items, (dialog1, which1) -> {
                     dialog1.dismiss();

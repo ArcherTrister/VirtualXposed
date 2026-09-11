@@ -59,7 +59,9 @@ repositories {
         url 'https://jitpack.io'
     }
     maven {
-        url 'https://maven.google.com/'
+        // url 'https://maven.google.com/'
+        url 'https://maven.aliyun.com/repository/google'
+        // url 'https://dl.google.com/dl/android/maven2/'
         name 'Google'
     }
     google()

@@ -3,8 +3,8 @@ package io.virtualapp.abs.ui;
 import android.app.Activity;
 import android.content.Context;
 import androidx.annotation.IdRes;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import org.jdeferred.android.AndroidDeferredManager;
 
@@ -13,7 +13,7 @@ import io.virtualapp.abs.BaseView;
 /**
  * @author Lody
  */
-public class VActivity extends Activity {
+public class VActivity extends AppCompatActivity { //Activity {
 
     /**
      * Implement of {@link BaseView#getActivity()}
@@ -33,12 +33,25 @@ public class VActivity extends Activity {
         return VUiKit.defer();
     }
 
+//    public Fragment findFragmentById(@IdRes int id) {
+//        return getFragmentManager().findFragmentById(id);
+//    }
+//
+//    public void replaceFragment(@IdRes int id, Fragment fragment) {
+//        getFragmentManager().beginTransaction().replace(id, fragment).commit();
+//    }
+
     public Fragment findFragmentById(@IdRes int id) {
-        return getFragmentManager().findFragmentById(id);
+        return getSupportFragmentManager().findFragmentById(id);
     }
 
+    // 替换 Fragment
     public void replaceFragment(@IdRes int id, Fragment fragment) {
-        getFragmentManager().beginTransaction().replace(id, fragment).commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(id, fragment)
+                .addToBackStack(null) // 可选：加入返回栈
+                .commit();
     }
 
     @Override

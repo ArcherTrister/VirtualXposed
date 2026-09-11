@@ -1,6 +1,7 @@
 package io.virtualapp.home;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -10,9 +11,11 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+//import androidx.fragment.app.ActivityCompat;
+//import android.support.v4.content.ContextCompat;
+//import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
@@ -178,7 +181,7 @@ public class LoadingActivity extends VActivity {
                     // tell user that this app need that permission
                     Log.i(TAG, "request permission: " + dangerousPermissions);
 
-                    AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                    AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.VAAlertTheme)
                             .setTitle(R.string.permission_tip_title)
                             .setMessage(getResources().getString(R.string.permission_tips_content, name))
                             .setPositiveButton(R.string.permission_tips_confirm, (dialog, which) -> {
@@ -252,7 +255,7 @@ public class LoadingActivity extends VActivity {
                 final String tag = "permission_tips_" + appModel.packageName.replaceAll("\\.", "_");
                 // TODO find a device figuring out why some permissions are not detected.
                 if (!Once.beenDone(tag)) {
-                    AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                    AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.VAAlertTheme)
                             .setTitle(android.R.string.dialog_alert_title)
                             .setMessage(getResources().getString(R.string.permission_denied_tips_content, appModel.name))
                             .setPositiveButton(R.string.permission_tips_confirm, (dialog, which) -> {

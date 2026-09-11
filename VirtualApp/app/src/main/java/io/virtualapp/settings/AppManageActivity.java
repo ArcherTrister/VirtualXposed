@@ -154,16 +154,26 @@ public class AppManageActivity extends VActivity {
         }
 
         popupMenu.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.action_uninstall:
-                    showUninstallDialog(appManageInfo, appManageInfo.getName());
-                    break;
-                case R.id.action_repair:
-                    showRepairDialog(appManageInfo);
-                    break;
-                case R.id.action_redirect:
-                    showStorageRedirectDialog(appManageInfo);
-                    break;
+//            switch (item.getItemId()) {
+//                case R.id.action_uninstall:
+//                    showUninstallDialog(appManageInfo, appManageInfo.getName());
+//                    break;
+//                case R.id.action_repair:
+//                    showRepairDialog(appManageInfo);
+//                    break;
+//                case R.id.action_redirect:
+//                    showStorageRedirectDialog(appManageInfo);
+//                    break;
+//            }
+            int id = item.getItemId();
+            if (id == R.id.action_uninstall) {
+                showUninstallDialog(appManageInfo, appManageInfo.getName());
+            }
+            if (id == R.id.action_repair) {
+                showRepairDialog(appManageInfo);
+            }
+            if (id == R.id.action_redirect) {
+                showStorageRedirectDialog(appManageInfo);
             }
             return false;
         });
